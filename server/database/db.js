@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
 
-
+dotenv.config();
 
 const DBConnection = async () => {
-    const DB_URL= `mongo db url`;
+
+    const MONGO_URI = `mongodb+srv://maheshshinde6023:kSEObfYL0Av6BkRK@cluster0.vjdcb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
     try {
-       await mongoose.connect(DB_URL, {
-            useNewUrlParser: true
-        });
-        console.log('Database connected.');        
+        await mongoose.connect(MONGO_URI, { useNewUrlParser: true });
+        console.log('Database connected successfully');
     } catch (error) {
-        console.error('Error in Database Connection', error.message);
+        console.log('Error while connecting with the database ', error.message);
     }
 }
 
