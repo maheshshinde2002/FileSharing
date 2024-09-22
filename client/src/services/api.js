@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URI = 'http://localhost:5000';
+const API_URI = 'https://filesharing-zk4j.onrender.com';
 
 export const uploadFile = async (data) => {
     try {
